@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT-MP3 - YouTube to MP3 Converter</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/ytmp3/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ytmp3/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ytmp3/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/ytmp3/favicon/site.webmanifest">
+    
+
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #f8f9fa; /* Light off-white background */
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            padding: 4%;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        header img {
+            width: 70px;
+            height: 70px;
+        }
+
+        /* Main Container */
+        .container {
+            flex: 1;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 70%;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Input Field */
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #0072ff;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Convert Button */
+        button {
+            background: #0072ff;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background: #005bb5;
+        }
+
+        /* Message Display */
+        #message {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0072ff;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            padding: 20px;
+            text-align: left;
+            margin: 30px auto;
+            width: 70%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .about p{
+            margin-top: 2px;
+        }
+        .about h3 {
+            color: #2570bb;
+            font-size: 30px;
+            margin-top: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            padding: 5%;
+            color: white;
+            font-size: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container, .about {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        YT-MP3
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Convert YouTube Videos to MP3</h1>
+        <input type="text" id="video_url" placeholder="Enter YouTube Video URL">
+        <button onclick="convert()">Convert to MP3</button>
+        <p id="message"></p>
+    </div>
+
+    <!-- About Section -->
+    <div class="about">
+        <h3>What is YT-MP3 and Why is It Popular?</h3>
+        <p>YT-MP3 is an easy-to-use online tool that allows users to convert YouTube videos into high-quality MP3 files. It’s popular because it enables users to download audio tracks from videos and listen to them offline, making it a great option for music lovers, podcasters, and learners.</p>
+
+        <h3>Why YT-MP3 Stands Out?</h3>
+        <p>Unlike other converters, YT-MP3 is fast, free, and doesn’t require any software installation. It supports high-quality audio downloads and works on any device, including smartphones, tablets, and computers.</p>
+
+        <h3>How Does YT-MP3 Work?</h3>
+        <p>YT-MP3 works by extracting the audio from a YouTube video and converting it into an MP3 file. This process takes just a few seconds, allowing users to enjoy their favorite content offline.</p>
+
+        <h3>How to Use YT-MP3: A Step-by-Step Guide</h3>
+        <p>1. Copy the URL of the YouTube video you want to convert.<br>
+           2. Paste the link into the input box above.<br>
+           3. Click the "Convert to MP3" button.<br>
+           4. Wait a few seconds for the conversion to complete.<br>
+           5. Check your download folder and enjoy your MP3 file.</p>
+
+        <h3>Benefits of Using YT-MP3</h3>
+        <p>- **Fast & Free:** No subscriptions or payments required.<br>
+           - **High-Quality MP3s:** Get the best possible audio quality.<br>
+           - **No Software Needed:** Works directly in your browser.<br>
+           - **Compatible with Any Device:** Use it on mobile, desktop, or tablet.<br>
+           - **Unlimited Conversions:** Convert as many videos as you want.</p>
+
+        <h3>Frequently Asked Questions (FAQs)</h3>
+        <p><b style="font-size: 22px; font-family: Arial, Helvetica, sans-serif; color: #2570bb;">1. Is YT-MP3 legal?</b><br>
+        Downloading copyrighted content without permission is illegal. Make sure to use YT-MP3 for personal and legal purposes only.</p>
+
+        <p><b style="font-size: 22px; font-family: Arial, Helvetica, sans-serif; color: #2570bb;">2. Do I need to install any software?</b><br>
+        No, YT-MP3 works directly in your browser without any installation.</p>
+
+        <p><b style="font-size: 22px; font-family: Arial, Helvetica, sans-serif; color: #2570bb;">3. Can I use YT-MP3 on my phone?</b><br>
+        Yes! YT-MP3 works on both Android and iOS devices.</p>
+
+        <h3>Conclusion</h3>
+        <p>YT-MP3 is a powerful tool for converting YouTube videos into MP3 format, offering convenience and flexibility. However, users should always be mindful of legal and ethical considerations. By respecting content creators and using trusted platforms, you can enjoy a hassle-free experience while making the most of this tool.</p>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Created by Pranav | Email: pranav081207@gmail.com
+    </footer>
+
+    <script>
+        function convert() {
+            let url = document.getElementById("video_url").value;
+            if (!url) {
+                document.getElementById("message").innerText = "Please enter a URL.";
+                return;
+            }
+
+            document.getElementById("message").innerText = "Converting...";
+            
+            fetch('http://127.0.0.1:5000/convert', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: url })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Response from server:", data);
+                if (data.error) {
+                    document.getElementById("message").innerText = "Error: " + data.error;
+                } else {
+                    document.getElementById("message").innerText = "MP3 Downloaded! Check 'Downloadsss' folder.";
+                }
+            })
+            .catch(error => {
+                document.getElementById("message").innerText = "Something went wrong! Check console for details.";
+            });
+        }
+    </script>
+</body>
+</html>
